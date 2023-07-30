@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Netflix clone project</title>
+ <link rel="stylesheet" href="style.css">
+ 
+ <style>
+  *{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body{
+ display: flex;
+ flex-flow: column;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ background-color: black;
+ color: white;
+}
+
+header{
+ margin-bottom: 1rem;
+ border-bottom: 0.5rem solid #222;
+}
+
+.first-banner{
+ margin: 0;
+ padding: 0.1rem;
+ width: 100%;
+ min-height: 30vh;
+ height: 65vh;
+ background-color: transparent;
+ background-image: linear-gradient(rgba(0,0,0,0.9), rgba(10, 10,10,0.3), rgba(10, 10,10,0.9)),url("https://assets.nflxext.com/ffe/siteui/vlv3/39f3c979-c105-4948-9c51-611eedf3a6fd/ede0645e-cecb-458e-9484-11c0186cdc02/NG-en-20230612-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: left;
+}
+
+.netflix-signup{
+ margin: 0.5rem;
+ display: flex;
+ justify-content: space-between;
+}
+
+.netflix{
+ width: 35%;
+}
+
+.signup{
+ background: crimson;
+ border: none;
+ font-weight: bold;
+ font-size: 0.8rem;
+ max-height: 40px;
+ color: white;
+ padding: 0.2rem;
+ border-radius: 5px;
+ margin: 0.3rem 0 0;
+}
+
+.netflix-info{
+ text-align: center;
+ margin-top: 3rem;
+ display: flex;
+ flex-flow: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.unlimited{
+ font-size: 2rem;
+}
+
+.watch, .ready {
+ margin-top: 1.3rem;
+ font-size: 1.05rem;
+ font-weight: 450;
+}
+
+.ready{
+ width: 60%;
+}
+
+.email{
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+ margin: 2rem 0 4rem 3rem;
+ width: 70%;
+}
+
+.email-input{
+ color: snow;
+ background-color: rgba(30,30,30,0.6);
+ border: 1px solid #555;
+ padding: 1rem;
+ height: 5vh;
+}
+
+.email-input::placeholder{
+ color: silver;
+ font-weight: 450;
+}
+
+button.start{
+ background-color: crimson;
+ color: white;
+ border: none;
+ border-radius: 0.3rem;
+ height: 6vh;
+ padding: 0.4rem;
+ object-fit: cover;
+ font-weight: 450;
+ font-size: 1.1rem;
+ margin: 1rem;
+}
+
+
+/*Main section*/
+
+main .services{
+ display: flex;
+ flex-flow: column;
+ justify-content: center;
+ align-items: center;
+}
+
+main section h1{
+ font-size: 1.7rem;
+ margin: 1rem;
+}
+
+.enjoy {
+ text-align: center;
+ width: 90%;
+}
+
+.enjoy h3{
+ font-weight: 400;
+}
+
+main img{
+ width: 90%;
+}
+
+.services article{
+  margin-bottom: 1rem;
+  border-bottom: 0.5rem solid #222;
+}
+
+
+
+/*FAQ Accordion*/
+
+.accordion, .container, .label{
+ position: relative;
+}
+
+.accordion{
+ width: 90%;
+ margin: 0.5rem auto;
+}
+
+.container{
+ margin: 0.3rem auto;
+background-color: #333; 
+}
+
+.label{
+ cursor: pointer;
+ background-color: #333;
+ padding: 1rem;
+}
+
+.label::before{
+ content: "+";
+ position: absolute;
+ top: 50%;
+ right: 1rem;
+ transform: translateY(-50%);
+ font-size: 1.5rem;
+ transition: all 0.4s;
+}
+
+.accordion .content{
+ font-weight: 500;
+ position: relative;
+ overflow: hidden;
+ height: 0;
+ text-align: justify;
+ font-size: 0.9rem;
+ background-color: #333;
+ width: 80%;
+ margin: auto;
+ font-size: 1.1rem;
+ transition: height 0.5s;
+}
+
+.accordion .container.active .content{
+ height: 180px;
+ padding-bottom: 1rem;
+}
+.container.active .label::before{
+ content: "-";
+ font-size: 2.5rem;
+}
+
+/*Closing section*/
+
+.enter-email{
+ width: 90%;
+ padding-top: 1rem;
+ margin: auto;
+ text-align: center;
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+}
+
+.enter-email h3{
+ padding-top: 1rem;
+ font-weight: 430;
+ width: 70%;
+} 
+
+.enter-email input{
+ color: snow;
+ background-color: rgba(30,30,30,0.6);
+ border: 1px solid #555;
+ padding: 1rem;
+ height: 39px;
+ margin-right: 40px;
+}
+
+.enter-email button.start{
+ margin: 1rem 3rem 1rem 0;
+ padding: 0.6rem;
+}
+
+footer{
+ border-top: 3px solid #333;
+ margin-top: 2rem;
+ padding: 1rem;
+}
+
+footer a:link{
+ color:  #ccc;
+ text-decoration: underline;
+}
+
+ a:visited{
+ color: #ddd;
+}
+
+.call{
+ color:  #ccc;
+ margin: 1rem 0;
+ font-size: 0.95rem;
+}
+
+.links{
+ margin-bottom: 1rem;
+}
+
+.links a:link{
+ color: #ccc;
+ font-size: 0.8rem;
+ font-weight: 400;
+ margin: 0.6rem 0.2rem;
+}
+
+.link-section h3{
+ color:  #ccc;
+ font-size: 0.9rem;
+ margin: 1rem auto 0;
+ font-weight: 450;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+ 
+ body{
+  font-size: 2rem;
+ }
+ 
+ .netflix{
+  width: 20%;
+ }
+ 
+ .signup{
+  width: 10vw;
+  height: 2.7vh;
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem 2.5rem;
+ }
+ 
+ .first-banner{
+  height: 35vh;
+  position: relative;
+ }
+ 
+ .netflix-info{
+  margin-top: 10rem;
+ }
+ 
+ .unlimited{
+  font-size: 2.8rem;
+ }
+ 
+ .watch, .ready{
+  font-weight: 500;
+  font-size: 1.5rem;
+ }
+ 
+ .ready{
+  width: 100%;
+ }
+ 
+ .email{
+  margin-left: 10rem;
+ }
+ 
+ .email-input{
+  height: 3.1vh;
+  width: 25vw;
+ }
+ 
+ button.start{
+  height: 3vh;
+  width: 15vw;
+ }
+ 
+ .enjoy{
+  padding: 3rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+ }
+ 
+ .enjoy h1{
+  font-family: bold;
+  font-size: 2.6rem;
+  margin: 0;
+  padding: 1rem 0;
+ }
+ 
+ .enjoy h3{
+  font-size: 1.4rem;
+ }
+ 
+ .enjoy div{
+  flex: 1 1 48%;
+  text-align: left;
+ }
+ 
+ main img{
+  width: 80%;
+ }
+ 
+ .info{
+  order: 1;
+ }
+ 
+ .devices{
+  width: 70%;
+ }
+ 
+ .kids{
+  width: 50%;
+ }
+ 
+ .linkcon{
+  padding: 3rem auto;
+  display: flex;
+  justify-content: space-evenly;
+ }
+ 
+ .links{
+  flex: 1 1 30%;
+ }
+ 
+ .links a:link, .link-section h3{
+  font-size: 1.1rem;
+ }
+ 
+ .accordion .content{
+  font-size: 1.5rem;
+ }
+ 
+ .label{
+  font-size: 1.2rem;
+  padding: 1.5rem;
+ }
+ 
+ .label::before{
+  font-size: 2.5rem;
+ }
+ 
+ .container.active .label::before{
+  font-size: 4rem;
+ }
+ 
+ .accordion .container.active .content{
+  overflow-y: scroll;
+  height: 200px;
+  padding-bottom: 2rem;
+  
+ }
+ 
+ .enter-email h3{
+  width: 90%;
+  font-weight: 450;
+  font-size: 1.2rem;
+ }
+ 
+ .enter-email input{
+  height: 3.1vh;
+  width: 25vw; 
+ }
+ 
+  .enter-email .start{
+   height: 3vh;
+   width: 15vw;
+  }
+ 
+ 
+ 
+}
+ </style>
+</head>
+
+<body>
+ <header class="head">
+  <section class="first-banner">
+   <article>
+    <div class="netflix-signup">
+     <img src="https://www.freepnglogos.com/uploads/netflix-logo-history-png-33.png" alt="/Clones /Netflix /images/Netflix_Logo_PMS.png" class="netflix">
+     <button type="button" class="signup">Sign in</button>
+    </div>
+    
+    <div class="netflix-info">
+     <h1 class="unlimited">Unlimited movies, TV shows and more</h1>
+     <h4 class="watch">Watch anywhere. Cancel at anytime.</h4> 
+     <h4 class="ready">Ready to watch? Enter your email to create or restart your membership.</h4>
+    </div>
+    <div class="email">
+     <input type="email" class="email-input" placeholder="E-mail address">
+     <br>
+     <button type="submit" class="start">Get Started > </button>
+    </div>
+   </article>
+  </section>
+ </header>
+ 
+ <main>
+  <section class="services">
+   <article class="enjoy">
+    <div class="">
+    <h1>Enjoy on your TV</h1>
+    <h3>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+    </div>
+    
+    <div>
+    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="/Clones /Netflix /images/tv.png">
+    </div>
+   </article>
+   
+   <article class="enjoy">
+    <div class="info">
+    <h1>Download your programmes to watch offline</h1>
+    <h3>Save your favourites easily and always have something to watch.</h3>
+    </div>
+    <div>
+   <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="/Clones /Netflix /images/mobile-0819.jpg">
+   </div>
+   </article>
+   
+    <article class="enjoy">
+     <div>
+    <h1>Watch everywhere</h1>
+    <h3>Stream unlimited films and TV programmes on your phone, tablet, laptop and TV.</h3>
+    </div>
+    <div>
+   <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="/Clones /Netflix /images/device-pile.png" class="devices">
+   </div>
+   </article>
+   
+   <article class="enjoy">
+    <div class="info">
+    <h1>Create profiles for children</h1>
+    <h3>Send children on adventures with their favourite characters in a space made just for them – free with your membership.</h3>
+    </div>
+    <img src="https://occ-0-769-768.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55" alt="kids" class="kids">
+   </article>
+  </section>
+  
+  <section class="faq">
+   <article class="accordion">
+    <div class="container">
+     <div class="label">
+      <h3>What can I watch on Netflix?</h3>
+     </div>
+     <div class="content">
+      <p>Netflix has an extensive library of feature films, documentaries, TV programmes, anime, award-winning Netflix originals and more. Watch as much as you want, anytime you want.
+      
+      <a href="">Check out some of our content.</a>
+      </p>
+     </div>
+    </div>
+    
+    <div class="container">
+     <div class="label">
+      <h3>What is Netflix?</h3>
+     </div>
+     <div class="content">
+      <p>Netflix is a streaming service that offers a wide variety of award-winning TV programmes, films, anime, documentaries and more – on thousands of internet-connected devices.
+      </p>
+      <p>You can watch as much as you want, whenever you want, without a single advert – all for one low monthly price. There's always something new to discover, and new TV programmes and films are added every week!</p>
+     </div>
+    </div>
+    
+    <div class="container">
+     <div class="label">
+       <h3>How much does Netflix cost?</h3>
+      </div>
+      <div class="content">
+        <p>Watch Netflix on your smartphone, tablet, smart TV, laptop or streaming device, all for one fixed monthly fee. Plans range from €7,99 to €15,99 a month. No extra costs, no contracts.</p>
+      </div>
+     </div>
+     
+    <div class="container">
+     <div class="label">
+      <h3>Where can I watch?</h3>
+     </div>
+     <div class="content">
+       <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+       
+       <p>You can also download your favourite programmes with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+     </div>
+    </div>
+    
+   <div class="container">
+     <div class="label">
+      <h3>How do I cancel?</h3>
+     </div>
+     <div class="content">
+      <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account at any time.</p>
+     </div>
+    </div>
+    
+    <div class="container">
+     <div class="label">
+      <h3>Is Netflix good for children?</h3>
+      </div>
+     <div class="content">
+      <p>The Netflix Children's experience is included in your membership to give parents control while children enjoy family-friendly TV programmes and films in their own space.
+      </p>
+      <p>Children's profiles come with PIN-protected parental controls that let you restrict the maturity rating of content children can watch and block specific titles you don’t want children to see.</p>
+     </div>
+    </div>
+    
+    
+   </article>
+   
+   <article class="enter-email">
+    <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+    <div class="email">
+     <input type="email" class="email-input" placeholder="E-mail address">
+     <br>
+     <button type="submit" class="start">Get Started > </button>
+    </div>
+   </article>
+  </section>
+ </main>
+ 
+ <footer>
+  <section class="link-section">
+  <h3 class="call">Questions? Call <a href="tel:08000201573">0800 020 1573</a></h3>
+  <section class="linkcon">
+  <article class="links">
+   <h3><a href="https://help.netflix.com/support/412">FAQ</a></h3>
+   <h3><a href="https://help.netflix.com/">
+    Help centre</a></h3>
+   <h3><a href="https://www.netflix.com/youraccount">Account</a></h3>
+   <h3><a href="https://media.netflix.com/">Media centre</a></h3>
+   <h3><a href="http://ir.netflix.com/">Investor relations</a></h3>
+   <h3><a href="https://jobs.netflix.com/jobs">Jobs</a></h3>
+   </article>
+   
+   <article class="links">
+   <h3><a href="https://www.netflix.com/redeem">Redeem gift cards</a></h3>
+   <h3><a href="https://www.netflix.com/gift-cards">Buy gift cards</a></h3>
+   <h3><a href="https://www.netflix.com/watch">Ways to watch</a></h3>
+   <h3><a href="https://help.netflix.com/legal/termsofuse">Terms of Use</a></h3>
+   <h3><a href="https://help.netflix.com/legal/privacy">Privacy</a></h3>
+   </article>
+   <article class="links">
+   <h3><a href="https://www.netflix.com/nl-en/#">Cookie Preferences</a></h3>
+   <h3><a href="https://help.netflix.com/legal/corpinfo">Corporate Information</a></h3>
+   <h3><a href="https://help.netflix.com/contactus">Contact Us</a></h3>
+   <h3><a href="https://fast.com/">Speed Test</a></h3>
+   <h3><a href="https://netflix.com/legal/guarantee">Legal Guarantee</a></h3>
+   <h3><a href="https://help.netflix.com/legal/notices">Legal Notices</a></h3>
+   <h3><a href="https://www.netflix.com/nl-en/browse/genre/839338">Only on Netflix</a></h3>
+  </article>
+ </section>
+  <label for="language"></label>
+  <select name="language" id="language">
+  <option value="English"> English </option>
+  </select>
+  
+  <h3>Netflix Netherlands</h3>
+  </section>
+ </footer>
+ 
+ 
+ <script src="netflix.js"> </script>
+ <script>
+  const accordion = document.getElementsByClassName('container');
+  console.log(accordion);
+  
+  for (i = 0; i < accordion.length; i++) {
+   accordion[i].addEventListener('click', function() {
+    this.classList.toggle('active');
+   })
+  };
+ </script>
+</body>
+
+</html>

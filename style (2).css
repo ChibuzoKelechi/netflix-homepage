@@ -1,0 +1,427 @@
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body{
+ display: flex;
+ flex-flow: column;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ background-color: black;
+ color: white;
+}
+
+header{
+ margin-bottom: 1rem;
+ border-bottom: 0.5rem solid #222;
+}
+
+.first-banner{
+ margin: 0;
+ padding: 0.1rem;
+ width: 100%;
+ min-height: 30vh;
+ height: 65vh;
+ background-color: transparent;
+ background-image: linear-gradient(rgba(0,0,0,0.9), rgba(10, 10,10,0.3), rgba(10, 10,10,0.9)),url("https://assets.nflxext.com/ffe/siteui/vlv3/39f3c979-c105-4948-9c51-611eedf3a6fd/ede0645e-cecb-458e-9484-11c0186cdc02/NG-en-20230612-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: left;
+}
+
+.netflix-signup{
+ margin: 0.5rem;
+ display: flex;
+ justify-content: space-between;
+}
+
+.netflix{
+ width: 35%;
+}
+
+.signup{
+ background: crimson;
+ border: none;
+ font-weight: bold;
+ font-size: 0.8rem;
+ max-height: 40px;
+ color: white;
+ padding: 0.2rem;
+ border-radius: 5px;
+ margin: 0.3rem 0 0;
+}
+
+.netflix-info{
+ text-align: center;
+ margin-top: 3rem;
+ display: flex;
+ flex-flow: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.unlimited{
+ font-size: 2rem;
+}
+
+.watch, .ready {
+ margin-top: 1.3rem;
+ font-size: 1.05rem;
+ font-weight: 450;
+}
+
+.ready{
+ width: 60%;
+}
+
+.email{
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+ margin: 2rem 0 4rem 3rem;
+ width: 70%;
+}
+
+.email-input{
+ color: snow;
+ background-color: rgba(30,30,30,0.6);
+ border: 1px solid #555;
+ padding: 1rem;
+ height: 5vh;
+}
+
+.email-input::placeholder{
+ color: silver;
+ font-weight: 450;
+}
+
+button.start{
+ background-color: crimson;
+ color: white;
+ border: none;
+ border-radius: 0.3rem;
+ height: 6vh;
+ padding: 0.4rem;
+ object-fit: cover;
+ font-weight: 450;
+ font-size: 1.1rem;
+ margin: 1rem;
+}
+
+
+/*Main section*/
+
+main .services{
+ display: flex;
+ flex-flow: column;
+ justify-content: center;
+ align-items: center;
+}
+
+main section h1{
+ font-size: 1.7rem;
+ margin: 1rem;
+}
+
+.enjoy {
+ text-align: center;
+ width: 90%;
+}
+
+.enjoy h3{
+ font-weight: 400;
+}
+
+main img{
+ width: 90%;
+}
+
+.services article{
+  margin-bottom: 1rem;
+  border-bottom: 0.5rem solid #222;
+}
+
+
+
+/*FAQ Accordion*/
+
+.accordion, .container, .label{
+ position: relative;
+}
+
+.accordion{
+ width: 90%;
+ margin: 0.5rem auto;
+}
+
+.container{
+ margin: 0.3rem auto;
+background-color: #333; 
+}
+
+.label{
+ cursor: pointer;
+ background-color: #333;
+ padding: 1rem;
+}
+
+.label::before{
+ content: "+";
+ position: absolute;
+ top: 50%;
+ right: 1rem;
+ transform: translateY(-50%);
+ font-size: 1.5rem;
+ transition: all 0.4s;
+}
+
+.accordion .content{
+ font-weight: 500;
+ position: relative;
+ overflow: hidden;
+ height: 0;
+ text-align: justify;
+ font-size: 0.9rem;
+ background-color: #333;
+ width: 80%;
+ margin: auto;
+ font-size: 1.1rem;
+ transition: height 0.5s;
+}
+
+.accordion .container.active .content{
+ height: 180px;
+ padding-bottom: 1rem;
+}
+.container.active .label::before{
+ content: "-";
+ font-size: 2.5rem;
+}
+
+/*Closing section*/
+
+.enter-email{
+ width: 90%;
+ padding-top: 1rem;
+ margin: auto;
+ text-align: center;
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+}
+
+.enter-email h3{
+ padding-top: 1rem;
+ font-weight: 430;
+ width: 70%;
+} 
+
+.enter-email input{
+ color: snow;
+ background-color: rgba(30,30,30,0.6);
+ border: 1px solid #555;
+ padding: 1rem;
+ height: 39px;
+ margin-right: 40px;
+}
+
+.enter-email button.start{
+ margin: 1rem 3rem 1rem 0;
+ padding: 0.6rem;
+}
+
+footer{
+ border-top: 3px solid #333;
+ margin-top: 2rem;
+ padding: 1rem;
+}
+
+footer a:link{
+ color:  #ccc;
+ text-decoration: underline;
+}
+
+ a:visited{
+ color: #ddd;
+}
+
+.call{
+ color:  #ccc;
+ margin: 1rem 0;
+ font-size: 0.95rem;
+}
+
+.links{
+ margin-bottom: 1rem;
+}
+
+.links a:link{
+ color: #ccc;
+ font-size: 0.8rem;
+ font-weight: 400;
+ margin: 0.6rem 0.2rem;
+}
+
+.link-section h3{
+ color:  #ccc;
+ font-size: 0.9rem;
+ margin: 1rem auto 0;
+ font-weight: 450;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+ 
+ body{
+  font-size: 2rem;
+ }
+ 
+ .netflix{
+  width: 20%;
+ }
+ 
+ .signup{
+  width: 10vw;
+  height: 2.7vh;
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem 2.5rem;
+ }
+ 
+ .first-banner{
+  height: 35vh;
+  position: relative;
+ }
+ 
+ .netflix-info{
+  margin-top: 10rem;
+ }
+ 
+ .unlimited{
+  font-size: 2.8rem;
+ }
+ 
+ .watch, .ready{
+  font-weight: 500;
+  font-size: 1.5rem;
+ }
+ 
+ .ready{
+  width: 100%;
+ }
+ 
+ .email{
+  margin-left: 10rem;
+ }
+ 
+ .email-input{
+  height: 3.1vh;
+  width: 25vw;
+ }
+ 
+ button.start{
+  height: 3vh;
+  width: 15vw;
+ }
+ 
+ .enjoy{
+  padding: 3rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+ }
+ 
+ .enjoy h1{
+  font-family: bold;
+  font-size: 2.6rem;
+  margin: 0;
+  padding: 1rem 0;
+ }
+ 
+ .enjoy h3{
+  font-size: 1.4rem;
+ }
+ 
+ .enjoy div{
+  flex: 1 1 48%;
+  text-align: left;
+ }
+ 
+ main img{
+  width: 80%;
+ }
+ 
+ .info{
+  order: 1;
+ }
+ 
+ .devices{
+  width: 70%;
+ }
+ 
+ .kids{
+  width: 50%;
+ }
+ 
+ .linkcon{
+  padding: 3rem auto;
+  display: flex;
+  justify-content: space-evenly;
+ }
+ 
+ .links{
+  flex: 1 1 30%;
+ }
+ 
+ .links a:link, .link-section h3{
+  font-size: 1.1rem;
+ }
+ 
+ .accordion .content{
+  font-size: 1.5rem;
+ }
+ 
+ .label{
+  font-size: 1.2rem;
+  padding: 1.5rem;
+ }
+ 
+ .label::before{
+  font-size: 2.5rem;
+ }
+ 
+ .container.active .label::before{
+  font-size: 4rem;
+ }
+ 
+ .accordion .container.active .content{
+  overflow-y: scroll;
+  height: 200px;
+  padding-bottom: 2rem;
+  
+ }
+ 
+ .enter-email h3{
+  width: 90%;
+  font-weight: 450;
+  font-size: 1.2rem;
+ }
+ 
+ .enter-email input{
+  height: 3.1vh;
+  width: 25vw; 
+ }
+ 
+  .enter-email .start{
+   height: 3vh;
+   width: 15vw;
+  }
+ 
+ 
+ 
+}
